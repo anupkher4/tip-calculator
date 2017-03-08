@@ -22,8 +22,18 @@ class TipViewController: UIViewController {
         
         let defaultTipPc = defaults.integer(forKey: "default_tip_segment")
         tipPercentSegment.selectedSegmentIndex = defaultTipPc
+        
+        // Initially hide non-essential elements
+        tipPercentSegment.isHidden = true
+        tipAmountLabel.isHidden = true
+        totalLabel.isHidden = true
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        amountTextField.becomeFirstResponder()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -38,6 +48,12 @@ class TipViewController: UIViewController {
     }
 
     @IBAction func amountChanged(_ sender: Any) {
+        
+        // Show hidden elements after begin typing
+        tipPercentSegment.isHidden = false
+        tipAmountLabel.isHidden = false
+        totalLabel.isHidden = false
+        
         guard let text = amountTextField.text else {
             return
         }

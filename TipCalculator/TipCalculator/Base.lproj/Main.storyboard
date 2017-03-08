@@ -24,11 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iF8-Zz-sxm">
-                                <rect key="frame" x="159" y="104" width="200" height="100"/>
+                                <rect key="frame" x="159" y="94" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="3xn-Ce-Vf5"/>
                                     <constraint firstAttribute="width" secondItem="iF8-Zz-sxm" secondAttribute="height" multiplier="2:1" id="VtN-6Q-ByE"/>
-                                    <constraint firstAttribute="width" constant="200" id="ZmE-OI-nNJ"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
@@ -38,7 +37,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="htw-PN-y52">
-                                <rect key="frame" x="16" y="224" width="343" height="29"/>
+                                <rect key="frame" x="16" y="219" width="343" height="29"/>
                                 <segments>
                                     <segment title="15%"/>
                                     <segment title="18%"/>
@@ -49,21 +48,20 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z8-1Y-ZhN">
-                                <rect key="frame" x="109" y="342" width="250" height="100"/>
+                                <rect key="frame" x="159" y="337" width="200" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="P1s-07-k3F"/>
-                                    <constraint firstAttribute="width" constant="250" id="pnK-jw-LUE"/>
-                                    <constraint firstAttribute="width" secondItem="4z8-1Y-ZhN" secondAttribute="height" multiplier="5:2" id="sqC-KK-guf"/>
+                                    <constraint firstAttribute="width" secondItem="4z8-1Y-ZhN" secondAttribute="height" multiplier="2:1" id="sqC-KK-guf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-HT-fhS">
-                                <rect key="frame" x="259" y="272" width="100" height="50"/>
+                                <rect key="frame" x="259" y="267" width="100" height="50"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="3t4-HT-fhS" secondAttribute="height" multiplier="2:1" id="5h9-Zt-R2I"/>
                                     <constraint firstAttribute="height" constant="50" id="Sd9-FG-IXi"/>
-                                    <constraint firstAttribute="width" constant="100" id="gbz-ma-zZT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -73,14 +71,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="htw-PN-y52" firstAttribute="top" secondItem="iF8-Zz-sxm" secondAttribute="bottom" constant="20" id="0aE-jL-HWr"/>
+                            <constraint firstItem="htw-PN-y52" firstAttribute="top" secondItem="iF8-Zz-sxm" secondAttribute="bottom" constant="25" id="0aE-jL-HWr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3t4-HT-fhS" secondAttribute="trailing" id="7ta-Gv-irI"/>
-                            <constraint firstItem="iF8-Zz-sxm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="LkO-NI-g7B"/>
+                            <constraint firstItem="iF8-Zz-sxm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="LkO-NI-g7B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4z8-1Y-ZhN" secondAttribute="trailing" id="ME4-e5-PMa"/>
-                            <constraint firstItem="4z8-1Y-ZhN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="MNW-c0-hta"/>
+                            <constraint firstItem="4z8-1Y-ZhN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="MNW-c0-hta"/>
                             <constraint firstItem="3t4-HT-fhS" firstAttribute="top" secondItem="htw-PN-y52" secondAttribute="bottom" constant="20" id="OPi-31-dTa"/>
-                            <constraint firstItem="iF8-Zz-sxm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="Xv0-Ur-BI0"/>
-                            <constraint firstItem="3t4-HT-fhS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="YK7-XO-Cqf"/>
+                            <constraint firstItem="iF8-Zz-sxm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Xv0-Ur-BI0"/>
+                            <constraint firstItem="3t4-HT-fhS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="YK7-XO-Cqf"/>
                             <constraint firstItem="4z8-1Y-ZhN" firstAttribute="top" secondItem="3t4-HT-fhS" secondAttribute="bottom" constant="20" id="aLM-lM-HcX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="htw-PN-y52" secondAttribute="trailing" id="r5b-p5-0gV"/>
                             <constraint firstAttribute="leadingMargin" secondItem="htw-PN-y52" secondAttribute="leading" id="xcO-Y5-ZVS"/>
