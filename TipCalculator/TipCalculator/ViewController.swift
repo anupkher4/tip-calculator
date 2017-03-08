@@ -11,19 +11,26 @@ import UIKit
 class TipViewController: UIViewController {
     @IBOutlet weak var tipPercentSegment: UISegmentedControl!
     @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var splitForTwoLabel: UILabel!
-    @IBOutlet weak var splitForFourLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var tipAmountLabel: UILabel!
     
+    let defaults = UserDefaults.standard
     let tipAmounts = [15.0, 18.0, 20.0]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let defaultTipPc = defaults.integer(forKey: "default_tip_segment")
+        tipPercentSegment.selectedSegmentIndex = defaultTipPc
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func viewTapped(_ sender: Any) {
+        view.endEditing(true)
     }
     
     @IBAction func tipPercentChanged(_ sender: Any) {
@@ -37,11 +44,11 @@ class TipViewController: UIViewController {
         guard let amount = Double(text) else {
             return
         }
-        let tip = tipAmounts[tipPercentSegment.selectedSegmentIndex] / 100
-        let total = amount + (amount * tip)
-        totalLabel.text = "= \(String(format: "%.2f", total))"
-        splitForTwoLabel.text = "Split for 2: \(String(format: "%.2f", total / 2))"
-        splitForFourLabel.text = "Split for 4: \(String(format: "%.2f", total / 4))"
+        let tipPc = tipAmounts[tipPercentSegment.selectedSegmentIndex] / 100
+        let tip = amount * tipPc
+        tipAmountLabel.text = "+ $\(String(format: "%.2f", tip))"
+        let total = amount + tip
+        totalLabel.text = "= $\(String(format: "%.2f", total))"
     }
 
 }

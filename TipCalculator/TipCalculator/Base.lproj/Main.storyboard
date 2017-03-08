@@ -31,8 +31,8 @@
                                     <constraint firstAttribute="width" constant="200" id="ZmE-OI-nNJ"/>
                                 </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="amountChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="lxe-Ds-Kin"/>
                                 </connections>
@@ -49,67 +49,117 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4z8-1Y-ZhN">
-                                <rect key="frame" x="109" y="272" width="250" height="100"/>
+                                <rect key="frame" x="109" y="342" width="250" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="P1s-07-k3F"/>
                                     <constraint firstAttribute="width" constant="250" id="pnK-jw-LUE"/>
                                     <constraint firstAttribute="width" secondItem="4z8-1Y-ZhN" secondAttribute="height" multiplier="5:2" id="sqC-KK-guf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split for 2:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAT-bf-dpC">
-                                <rect key="frame" x="16" y="416" width="343" height="75"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3t4-HT-fhS">
+                                <rect key="frame" x="259" y="272" width="100" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="4dH-UT-Au8"/>
-                                    <constraint firstAttribute="width" constant="343" id="RCJ-4C-Oot"/>
+                                    <constraint firstAttribute="height" constant="50" id="Sd9-FG-IXi"/>
+                                    <constraint firstAttribute="width" constant="100" id="gbz-ma-zZT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split for 4:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gM-Fo-utE">
-                                <rect key="frame" x="16" y="499" width="343" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="ekx-ot-4D7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="htw-PN-y52" firstAttribute="top" secondItem="iF8-Zz-sxm" secondAttribute="bottom" constant="20" id="0aE-jL-HWr"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="kAT-bf-dpC" secondAttribute="leading" id="Fug-UX-TCm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3t4-HT-fhS" secondAttribute="trailing" id="7ta-Gv-irI"/>
                             <constraint firstItem="iF8-Zz-sxm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="LkO-NI-g7B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4z8-1Y-ZhN" secondAttribute="trailing" id="ME4-e5-PMa"/>
                             <constraint firstItem="4z8-1Y-ZhN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="MNW-c0-hta"/>
-                            <constraint firstItem="2gM-Fo-utE" firstAttribute="top" secondItem="kAT-bf-dpC" secondAttribute="bottom" constant="8" id="Qbr-fk-MN6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kAT-bf-dpC" secondAttribute="trailing" id="Ryd-HB-Lb3"/>
+                            <constraint firstItem="3t4-HT-fhS" firstAttribute="top" secondItem="htw-PN-y52" secondAttribute="bottom" constant="20" id="OPi-31-dTa"/>
                             <constraint firstItem="iF8-Zz-sxm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="Xv0-Ur-BI0"/>
-                            <constraint firstItem="kAT-bf-dpC" firstAttribute="top" secondItem="4z8-1Y-ZhN" secondAttribute="bottom" constant="44" id="d52-eb-jIu"/>
-                            <constraint firstItem="4z8-1Y-ZhN" firstAttribute="top" secondItem="htw-PN-y52" secondAttribute="bottom" constant="20" id="gIW-sD-9UR"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="2gM-Fo-utE" secondAttribute="leading" id="p7s-cg-wYc"/>
+                            <constraint firstItem="3t4-HT-fhS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="YK7-XO-Cqf"/>
+                            <constraint firstItem="4z8-1Y-ZhN" firstAttribute="top" secondItem="3t4-HT-fhS" secondAttribute="bottom" constant="20" id="aLM-lM-HcX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="htw-PN-y52" secondAttribute="trailing" id="r5b-p5-0gV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2gM-Fo-utE" secondAttribute="trailing" id="sQL-sd-TKo"/>
                             <constraint firstAttribute="leadingMargin" secondItem="htw-PN-y52" secondAttribute="leading" id="xcO-Y5-ZVS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iF8-Zz-sxm" secondAttribute="trailing" id="zds-aF-S37"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="lWA-yx-mcc" appends="YES" id="Uwi-Iw-4um"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tip Calculator" id="E4e-dC-qt6"/>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="E4e-dC-qt6">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="IW9-Md-0Ro">
+                            <connections>
+                                <segue destination="AFx-Su-Lir" kind="show" id="GfC-4J-PsE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="amountTextField" destination="iF8-Zz-sxm" id="Fae-6q-AHC"/>
-                        <outlet property="splitForFourLabel" destination="2gM-Fo-utE" id="ETP-G2-zWZ"/>
-                        <outlet property="splitForTwoLabel" destination="kAT-bf-dpC" id="FGt-CN-dwY"/>
+                        <outlet property="tipAmountLabel" destination="3t4-HT-fhS" id="266-8R-hGk"/>
                         <outlet property="tipPercentSegment" destination="htw-PN-y52" id="k4D-xx-TG3"/>
                         <outlet property="totalLabel" destination="4z8-1Y-ZhN" id="Zaf-Ak-9iL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="lWA-yx-mcc">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="vTN-ye-wlV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1079.2" y="137.18140929535232"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="1Ic-Tj-vpJ">
+            <objects>
+                <viewController id="AFx-Su-Lir" customClass="SettingsViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aTN-K6-41N"/>
+                        <viewControllerLayoutGuide type="bottom" id="xjg-Ch-p4G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iqj-Rw-ZRm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-rK-sny">
+                                <rect key="frame" x="16" y="72" width="175.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PtK-t8-Agh">
+                                <rect key="frame" x="16" y="101" width="343" height="29"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <connections>
+                                    <action selector="tipPercentChanged:" destination="AFx-Su-Lir" eventType="valueChanged" id="JJn-S0-K6m"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="zHD-rK-sny" secondAttribute="trailing" constant="50" id="Awv-vl-j8L"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="PtK-t8-Agh" secondAttribute="leading" id="HVD-0v-l4X"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="zHD-rK-sny" secondAttribute="leading" id="TWF-d9-3yj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PtK-t8-Agh" secondAttribute="trailing" id="Thl-mQ-OG1"/>
+                            <constraint firstItem="PtK-t8-Agh" firstAttribute="top" secondItem="zHD-rK-sny" secondAttribute="bottom" constant="8" id="nmX-6P-Goy"/>
+                            <constraint firstItem="zHD-rK-sny" firstAttribute="top" secondItem="aTN-K6-41N" secondAttribute="bottom" constant="8" id="qvE-wO-RiJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="defaultTipPercentSegment" destination="PtK-t8-Agh" id="JrD-hx-tnK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LGm-Qy-QIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848.5" y="136.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0YT-bx-PMf">
