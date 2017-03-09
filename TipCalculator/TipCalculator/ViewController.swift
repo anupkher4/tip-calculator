@@ -49,9 +49,19 @@ class TipViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     let tipAmounts = [15.0, 18.0, 20.0]
+    
+    let locale = Locale.current
+    let formatter = NumberFormatter()
+    var currentString = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        formatter.locale = locale
+        formatter.numberStyle = .currency
+        formatter.usesGroupingSeparator = true
+        
+        amountTextField.placeholder = locale.currencySymbol
         
         // Initially hide non-essential elements
         tipPercentSegment.isHidden = true
@@ -62,6 +72,7 @@ class TipViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         amountTextField.becomeFirstResponder()
+        
         
         let defaultTipPc = defaults.integer(forKey: "default_tip_segment")
         tipPercentSegment.selectedSegmentIndex = defaultTipPc
@@ -119,12 +130,22 @@ class TipViewController: UIViewController {
         guard let amount = Double(text) else {
             return
         }
+        
         let tipPc = tipAmounts[tipPercentSegment.selectedSegmentIndex] / 100
         let tip = amount * tipPc
-        tipAmountLabel.text = "+ $\(String(format: "%.2f", tip))"
         let total = amount + tip
-        totalLabel.text = "= $\(String(format: "%.2f", total))"
+        
+        guard let fTip = formatter.string(from: tip as NSNumber) else {
+            return
+        }
+        guard let fTotal = formatter.string(from: total as NSNumber) else {
+            return
+        }
+        
+        tipAmountLabel.text = fTip
+        totalLabel.text = fTotal
+        
+        
     }
-
+    
 }
-
