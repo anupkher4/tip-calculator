@@ -137,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHD-rK-sny">
-                                <rect key="frame" x="16" y="72" width="175.5" height="21"/>
+                                <rect key="frame" x="16" y="72" width="176" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -153,24 +153,57 @@
                                     <action selector="tipPercentChanged:" destination="AFx-Su-Lir" eventType="valueChanged" id="JJn-S0-K6m"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Scheme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXD-oK-T1t">
+                                <rect key="frame" x="16" y="169" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zou-7a-1Tu">
+                                <rect key="frame" x="310" y="198" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="BTi-ri-p7J"/>
+                                    <constraint firstAttribute="width" secondItem="Zou-7a-1Tu" secondAttribute="height" multiplier="49:31" id="pe9-Gf-8t9"/>
+                                    <constraint firstAttribute="height" constant="31" id="saH-sl-g2J"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="themeChanged:" destination="AFx-Su-Lir" eventType="valueChanged" id="T1A-GB-lB2"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light / Dark" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGG-56-LOr">
+                                <rect key="frame" x="16" y="203" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="rGG-56-LOr" firstAttribute="width" secondItem="yXD-oK-T1t" secondAttribute="width" id="5kI-As-2zP"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="yXD-oK-T1t" secondAttribute="trailing" constant="20" id="Aez-HB-k4b"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="zHD-rK-sny" secondAttribute="trailing" constant="50" id="Awv-vl-j8L"/>
+                            <constraint firstItem="rGG-56-LOr" firstAttribute="top" secondItem="yXD-oK-T1t" secondAttribute="bottom" constant="13" id="Dn7-IQ-3Xc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="PtK-t8-Agh" secondAttribute="leading" id="HVD-0v-l4X"/>
+                            <constraint firstItem="Zou-7a-1Tu" firstAttribute="top" secondItem="yXD-oK-T1t" secondAttribute="bottom" constant="8" id="NHp-Br-uZ8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zHD-rK-sny" secondAttribute="leading" id="TWF-d9-3yj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PtK-t8-Agh" secondAttribute="trailing" id="Thl-mQ-OG1"/>
+                            <constraint firstItem="yXD-oK-T1t" firstAttribute="top" secondItem="PtK-t8-Agh" secondAttribute="bottom" constant="40" id="W42-Uo-6dZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zou-7a-1Tu" secondAttribute="trailing" id="Ybq-iH-NiO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yXD-oK-T1t" secondAttribute="leading" id="nCs-Dt-il6"/>
                             <constraint firstItem="PtK-t8-Agh" firstAttribute="top" secondItem="zHD-rK-sny" secondAttribute="bottom" constant="8" id="nmX-6P-Goy"/>
                             <constraint firstItem="zHD-rK-sny" firstAttribute="top" secondItem="aTN-K6-41N" secondAttribute="bottom" constant="8" id="qvE-wO-RiJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="rGG-56-LOr" secondAttribute="leading" id="zZU-Ex-SS5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="defaultTipPercentSegment" destination="PtK-t8-Agh" id="JrD-hx-tnK"/>
+                        <outlet property="themeLabel" destination="rGG-56-LOr" id="kjM-gs-iBn"/>
+                        <outlet property="themeSwitch" destination="Zou-7a-1Tu" id="bdO-FC-Soh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGm-Qy-QIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848.5" y="136.5"/>
+            <point key="canvasLocation" x="1847.2" y="136.28185907046478"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0YT-bx-PMf">

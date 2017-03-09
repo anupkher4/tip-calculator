@@ -10,6 +10,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var defaultTipPercentSegment: UISegmentedControl!
+    @IBOutlet weak var themeSwitch: UISwitch!
+    @IBOutlet weak var themeLabel: UILabel!
 
     let defaults = UserDefaults.standard
     
@@ -21,6 +23,10 @@ class SettingsViewController: UIViewController {
         let defaultTipPc = defaults.integer(forKey: "default_tip_segment")
         defaultTipPercentSegment.selectedSegmentIndex = defaultTipPc
         
+        let isLightScheme = defaults.bool(forKey: "color_scheme")
+        themeSwitch.setOn(isLightScheme, animated: true)
+        
+        setThemeLabelWhenSwitch(is: themeSwitch.isOn)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +39,20 @@ class SettingsViewController: UIViewController {
         defaults.synchronize()
     }
 
+    @IBAction func themeChanged(_ sender: Any) {
+        setThemeLabelWhenSwitch(is: themeSwitch.isOn)
+        defaults.set(themeSwitch.isOn, forKey: "color_scheme")
+        defaults.synchronize()
+    }
+    
+    func setThemeLabelWhenSwitch(is on: Bool) {
+        if on {
+            themeLabel.text = "Light"
+        } else {
+            themeLabel.text = "Dark"
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

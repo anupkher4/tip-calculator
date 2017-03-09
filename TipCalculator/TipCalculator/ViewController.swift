@@ -10,6 +10,9 @@ import UIKit
 
 enum ColorPalette {
     case wheat, paleGold, darkCoral, isabellineGray, richBlack
+    case trolleyGrey, outerSpace, darkJungleGreen
+    case yankeesBlue
+    case lightGray
     
     func getColor() -> UIColor {
         switch self {
@@ -23,6 +26,16 @@ enum ColorPalette {
             return UIColor(colorLiteralRed: 0.93, green: 0.93, blue: 0.93, alpha: 1.0)
         case .richBlack:
             return UIColor(colorLiteralRed: 0.02, green: 0.02, blue: 0.09, alpha: 1.0)
+        case .trolleyGrey:
+            return UIColor(colorLiteralRed: 0.498, green: 0.4824, blue: 0.5098, alpha: 1.0)
+        case .outerSpace:
+            return UIColor(colorLiteralRed: 0.2667, green: 0.2706, blue: 0.3294, alpha: 1.0)
+        case .darkJungleGreen:
+            return UIColor(colorLiteralRed: 0.0902, green: 0.1294, blue: 0.1294, alpha: 1.0)
+        case .yankeesBlue:
+            return UIColor(colorLiteralRed: 0.1216, green: 0.1255, blue: 0.2549, alpha: 1.0)
+        case .lightGray:
+            return UIColor(colorLiteralRed: 0.8431, green: 0.8039, blue: 0.8, alpha: 1.0)
         }
     }
 }
@@ -40,23 +53,45 @@ class TipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaultTipPc = defaults.integer(forKey: "default_tip_segment")
-        tipPercentSegment.selectedSegmentIndex = defaultTipPc
-        
         // Initially hide non-essential elements
         tipPercentSegment.isHidden = true
         totalSubView.isHidden = true
-        
-        navigationController?.navigationBar.barTintColor = ColorPalette.isabellineGray.getColor()
-        navigationController?.navigationBar.tintColor = ColorPalette.richBlack.getColor()
-        view.backgroundColor = ColorPalette.wheat.getColor()
-        totalSubView.backgroundColor = ColorPalette.paleGold.getColor()
-        tipPercentSegment.tintColor = ColorPalette.darkCoral.getColor()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         amountTextField.becomeFirstResponder()
+        
+        let defaultTipPc = defaults.integer(forKey: "default_tip_segment")
+        tipPercentSegment.selectedSegmentIndex = defaultTipPc
+        
+        let isLightScheme = defaults.bool(forKey: "color_scheme")
+        
+        // Set color scheme
+        if isLightScheme {
+            navigationController?.navigationBar.barTintColor = ColorPalette.isabellineGray.getColor()
+            navigationController?.navigationBar.tintColor = ColorPalette.richBlack.getColor()
+            
+            view.backgroundColor = ColorPalette.wheat.getColor()
+            totalSubView.backgroundColor = ColorPalette.paleGold.getColor()
+            tipPercentSegment.tintColor = ColorPalette.darkCoral.getColor()
+            
+            amountTextField.textColor = ColorPalette.richBlack.getColor()
+            tipAmountLabel.textColor = ColorPalette.richBlack.getColor()
+            totalLabel.textColor = ColorPalette.richBlack.getColor()
+        } else {
+            navigationController?.navigationBar.barTintColor = ColorPalette.trolleyGrey.getColor()
+            navigationController?.navigationBar.tintColor = ColorPalette.darkJungleGreen.getColor()
+            
+            view.backgroundColor = ColorPalette.outerSpace.getColor()
+            totalSubView.backgroundColor = ColorPalette.yankeesBlue.getColor()
+            tipPercentSegment.tintColor = ColorPalette.trolleyGrey.getColor()
+            
+            amountTextField.textColor = ColorPalette.lightGray.getColor()
+            tipAmountLabel.textColor = ColorPalette.lightGray.getColor()
+            totalLabel.textColor = ColorPalette.lightGray.getColor()
+        }
     }
     
     override func didReceiveMemoryWarning() {
