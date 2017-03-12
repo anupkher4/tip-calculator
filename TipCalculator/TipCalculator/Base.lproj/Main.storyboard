@@ -32,9 +32,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <connections>
-                                    <action selector="amountChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="lxe-Ds-Kin"/>
-                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="htw-PN-y52">
                                 <rect key="frame" x="16" y="219" width="343" height="29"/>

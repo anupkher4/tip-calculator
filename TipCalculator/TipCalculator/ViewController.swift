@@ -52,10 +52,13 @@ class TipViewController: UIViewController {
     
     let locale = Locale.current
     let formatter = NumberFormatter()
+    
     var currentString = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        amountTextField.delegate = self
         
         formatter.locale = locale
         formatter.numberStyle = .currency
@@ -115,25 +118,31 @@ class TipViewController: UIViewController {
     }
     
     @IBAction func tipPercentChanged(_ sender: Any) {
-        amountChanged(sender)
+        calculateTotal()
     }
-
-    @IBAction func amountChanged(_ sender: Any) {
-        
-        // Show hidden elements after begin typing
-        tipPercentSegment.isHidden = false
-        totalSubView.isHidden = false
+    
+    func calculateTotal() {
         
         guard let text = amountTextField.text else {
             return
         }
-        guard let amount = Double(text) else {
+        guard let amountNS = formatter.number(from: text) else {
             return
         }
         
-        let tipPc = tipAmounts[tipPercentSegment.selectedSegmentIndex] / 100
+        let amount = amountNS as Double
+        
+        let tipIndex = tipPercentSegment.selectedSegmentIndex
+        
+        let tipPc = tipAmounts[tipIndex] / 100
         let tip = amount * tipPc
         let total = amount + tip
+        
+        updateLabels(tip: tip, total: total)
+        
+    }
+    
+    func updateLabels(tip: Double, total: Double) {
         
         guard let fTip = formatter.string(from: tip as NSNumber) else {
             return
@@ -145,7 +154,44 @@ class TipViewController: UIViewController {
         tipAmountLabel.text = fTip
         totalLabel.text = fTotal
         
+    }
+    
+    func formatCurrency(string: String) {
         
+        guard let number = Double(string) else {
+            return
+        }
+        
+        let value = number / 100
+        
+        amountTextField.text = formatter.string(from: value as NSNumber)
+        
+        calculateTotal()
+        
+    }
+    
+}
+
+extension TipViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        // Show hidden elements after begin typing
+        tipPercentSegment.isHidden = false
+        totalSubView.isHidden = false
+        
+        switch string {
+        case "0","1","2","3","4","5","6","7","8","9":
+            currentString += string
+            formatCurrency(string: currentString)
+        default:
+            if string.characters.count == 0 && currentString.characters.count != 0 {
+                currentString = String(currentString.characters.dropLast())
+                formatCurrency(string: currentString)
+            }
+        }
+        
+        return false
     }
     
 }
