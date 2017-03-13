@@ -52,6 +52,7 @@ class TipViewController: UIViewController {
     
     let locale = Locale.current
     let formatter = NumberFormatter()
+    let calendar = Calendar.current
     
     var currentString = ""
 
@@ -74,8 +75,34 @@ class TipViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        amountTextField.becomeFirstResponder()
         
+        // Retrieve last typed amount
+        let current = Date()
+        
+        if let retrieved = defaults.object(forKey: "time_stamp") as? Date {
+            if calendar.compare(current, to: retrieved, toGranularity: .day).rawValue == 0 {
+                let cComponents = calendar.dateComponents([.hour, .minute], from: current)
+                let rComponents = calendar.dateComponents([.hour, .minute], from: retrieved)
+                
+                if let currentHour = cComponents.hour, let currentMinute = cComponents.minute, let retrievedHour = rComponents.hour, let retrievedMinute = rComponents.minute {
+                    
+                    if currentHour == retrievedHour {
+                        if currentMinute - retrievedMinute < 10 {
+                            let amount = defaults.double(forKey: "last_typed_amount")
+                            
+                            if let text = formatter.string(from: amount as NSNumber) {
+                                amountTextField.text = text
+                                calculateTotal()
+                            }
+                            
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+        amountTextField.becomeFirstResponder()
         
         let defaultTipPc = defaults.integer(forKey: "default_tip_segment")
         tipPercentSegment.selectedSegmentIndex = defaultTipPc
@@ -106,6 +133,24 @@ class TipViewController: UIViewController {
             tipAmountLabel.textColor = ColorPalette.lightGray.getColor()
             totalLabel.textColor = ColorPalette.lightGray.getColor()
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        let timestamp = Date()
+        
+        guard let text = amountTextField.text else {
+            return
+        }
+        guard let amountNS = formatter.number(from: text) else {
+            return
+        }
+        
+        let amount = amountNS as Double
+        
+        defaults.set(amount as Double, forKey: "last_typed_amount")
+        defaults.set(timestamp, forKey: "time_stamp")
     }
     
     override func didReceiveMemoryWarning() {
@@ -143,6 +188,10 @@ class TipViewController: UIViewController {
     }
     
     func updateLabels(tip: Double, total: Double) {
+        
+        // Show hidden elements after begin typing
+        tipPercentSegment.isHidden = false
+        totalSubView.isHidden = false
         
         guard let fTip = formatter.string(from: tip as NSNumber) else {
             return
