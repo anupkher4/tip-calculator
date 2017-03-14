@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		513D87991E6A3DB90020C552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D87981E6A3DB90020C552 /* AppDelegate.swift */; };
-		513D879B1E6A3DB90020C552 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D879A1E6A3DB90020C552 /* ViewController.swift */; };
+		513D879B1E6A3DB90020C552 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D879A1E6A3DB90020C552 /* TipViewController.swift */; };
 		513D879E1E6A3DB90020C552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513D879C1E6A3DB90020C552 /* Main.storyboard */; };
 		513D87A01E6A3DB90020C552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 513D879F1E6A3DB90020C552 /* Assets.xcassets */; };
 		513D87A31E6A3DB90020C552 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513D87A11E6A3DB90020C552 /* LaunchScreen.storyboard */; };
 		5171D18A1E6F897C003AC703 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171D1891E6F897C003AC703 /* SettingsViewController.swift */; };
+		5171D18C1E776C7D003AC703 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5171D18B1E776C7D003AC703 /* ColorPalette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		513D87951E6A3DB90020C552 /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		513D87981E6A3DB90020C552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		513D879A1E6A3DB90020C552 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		513D879A1E6A3DB90020C552 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		513D879D1E6A3DB90020C552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		513D879F1E6A3DB90020C552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		513D87A21E6A3DB90020C552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		513D87A41E6A3DB90020C552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5171D1891E6F897C003AC703 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5171D18B1E776C7D003AC703 /* ColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				513D87981E6A3DB90020C552 /* AppDelegate.swift */,
-				513D879A1E6A3DB90020C552 /* ViewController.swift */,
+				513D879A1E6A3DB90020C552 /* TipViewController.swift */,
+				5171D18B1E776C7D003AC703 /* ColorPalette.swift */,
 				513D879C1E6A3DB90020C552 /* Main.storyboard */,
 				5171D1891E6F897C003AC703 /* SettingsViewController.swift */,
 				513D879F1E6A3DB90020C552 /* Assets.xcassets */,
@@ -140,9 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				513D879B1E6A3DB90020C552 /* ViewController.swift in Sources */,
+				513D879B1E6A3DB90020C552 /* TipViewController.swift in Sources */,
 				513D87991E6A3DB90020C552 /* AppDelegate.swift in Sources */,
 				5171D18A1E6F897C003AC703 /* SettingsViewController.swift in Sources */,
+				5171D18C1E776C7D003AC703 /* ColorPalette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
